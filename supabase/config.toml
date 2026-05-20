@@ -1,0 +1,7 @@
+project_id = "pgecpyylurtpvdjktbuk"
+
+[functions.spin]
+verify_jwt = false
+
+[functions.withdraw]
+verify_jwt = false

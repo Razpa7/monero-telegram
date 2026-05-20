@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 210 95% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 320 90% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 130 70% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 30 95% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
+    --ring: 210 95% 55%;
+
+    --radius: 0.75rem;
+
+    --reel-bg: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 2%) 50%, hsl(0 0% 10%));
+    --frame: linear-gradient(180deg, hsl(220 15% 20%), hsl(220 15% 8%));
+    --display: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 18%));
+
+    --shadow-glow: 0 0 30px hsl(210 95% 55% / 0.5);
+    --shadow-btn: 0 4px 0 hsl(210 95% 30%), 0 6px 12px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(circle at 20% 0%, hsl(320 90% 25% / 0.4), transparent 50%),
+      radial-gradient(circle at 80% 100%, hsl(210 95% 25% / 0.4), transparent 50%),
+      repeating-linear-gradient(135deg, transparent 0 30px, hsl(0 0% 100% / 0.02) 30px 31px);
+    font-family: 'Arial Black', system-ui, sans-serif;
+  }
+}
+
+
