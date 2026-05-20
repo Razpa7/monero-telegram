@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monero Slot - Premium Web3 Casino</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #040407;
+        }
+        @keyframes shimmer {
+            100% { transform: translateX(200%); }
+        }
+        @keyframes float-y-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(4deg); }
+        }
+        @keyframes float-y-medium {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-22px) rotate(-8deg); }
+        }
+        @keyframes float-y-fast {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-18px) rotate(6deg); }
+        }
+        @keyframes coin-spin {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 15px rgba(249, 115, 22, 0.4)); }
+            50% { filter: drop-shadow(0 0 35px rgba(249, 115, 22, 0.8)); }
+        }
+        .animate-shimmer {
+            animation: shimmer 2s infinite;
+        }
+        /* Custom scrollbar hide */
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="fixed inset-0 overflow-hidden select-none text-white">
+
+    <!-- Ambient Glowing Lights -->
+    <div class="absolute top-[-10%] left-[-10%] w-[450px] h-[450px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[450px] h-[450px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-orange-600/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+    <!-- Floating 3D Vector Slot Symbols (Vector SVG representation for flawless rendering in Lovable) -->
+    <!-- Red Seven -->
+    <div class="absolute top-[12%] left-[8%] w-16 h-16 sm:w-24 sm:h-24 opacity-30 pointer-events-none" style="animation: float-y-slow 6s ease-in-out infinite;">
+        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)]">
+            <defs>
+                <linearGradient id="sevenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ff3333" />
+                    <stop offset="100%" stop-color="#990000" />
+                </linearGradient>
+                <filter id="glowSeven">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                        <feMergeNode in="coloredBlur"/>
+                        <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                </filter>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#ff3333" stroke-width="2" stroke-opacity="0.3" />
+            <path d="M30,30 L70,30 L45,75 L35,75 L55,40 L30,40 Z" fill="url(#sevenGrad)" filter="url(#glowSeven)" />
+        </svg>
+    </div>
+
+    <!-- Golden Star -->
+    <div class="absolute top-[18%] right-[8%] w-14 h-14 sm:w-20 sm:h-20 opacity-25 pointer-events-none" style="animation: float-y-medium 8s ease-in-out infinite; animation-delay: 1s;">
+        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)]">
+            <defs>
+                <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffea00" />
+                    <stop offset="100%" stop-color="#d4af37" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#ffea00" stroke-width="2" stroke-opacity="0.3" />
+            <polygon points="50,15 63,40 90,43 70,62 76,89 50,75 24,89 30,62 10,43 37,40" fill="url(#starGrad)" />
+        </svg>
+    </div>
+
+    <!-- Golden Bell -->
+    <div class="absolute bottom-[14%] right-[10%] w-14 h-14 sm:w-22 sm:h-22 opacity-35 pointer-events-none" style="animation: float-y-slow 5s ease-in-out infinite; animation-delay: 0.5s;">
+        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)]">
+            <defs>
+                <linearGradient id="bellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffd700" />
+                    <stop offset="100%" stop-color="#b8860b" />
+                </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#ffd700" stroke-width="2" stroke-opacity="0.3" />
+            <path d="M50,20 C40,20 35,35 35,55 L65,55 C65,35 60,20 50,20 Z" fill="url(#bellGrad)" />
+            <rect x="30" y="55" width="40" height="6" rx="3" fill="#ffd700" />
+            <circle cx="50" cy="65" r="6" fill="#b8860b" />
+        </svg>
+    </div>
+
+    <!-- BAR Symbol -->
+    <div class="absolute bottom-[48%] right-[4%] w-14 h-14 sm:w-20 sm:h-20 opacity-20 pointer-events-none" style="animation: float-y-fast 8s ease-in-out infinite; animation-delay: 1.5s;">
+        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_10px_15px_rgba(0,0,0,0.6)]">
+            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#ffaa00" stroke-width="2" stroke-opacity="0.3" />
+            <rect x="25" y="32" width="50" height="12" rx="3" fill="#d4af37" />
+            <rect x="25" y="47" width="50" height="12" rx="3" fill="#d4af37" />
+            <rect x="25" y="62" width="50" height="12" rx="3" fill="#d4af37" />
+            <text x="50" y="41" font-family="'Outfit', sans-serif" font-weight="900" font-size="9" fill="#0c0c12" text-anchor="middle">BAR</text>
+            <text x="50" y="56" font-family="'Outfit', sans-serif" font-weight="900" font-size="9" fill="#0c0c12" text-anchor="middle">BAR</text>
+            <text x="50" y="71" font-family="'Outfit', sans-serif" font-weight="900" font-size="9" fill="#0c0c12" text-anchor="middle">BAR</text>
+        </svg>
+    </div>
+
+    <!-- Glowing USDT Coin -->
+    <div class="absolute top-[32%] right-[6%] w-10 h-10 opacity-30 pointer-events-none animate-bounce" style="animation-duration: 4s;">
+        <svg viewBox="0 0 100 100" class="w-full h-full drop-shadow-[0_5px_8px_rgba(0,0,0,0.5)]">
+            <circle cx="50" cy="50" r="45" fill="#d4af37" />
+            <circle cx="50" cy="50" r="38" fill="#26a17b" />
+            <text x="50" y="62" font-family="sans-serif" font-weight="bold" font-size="36" fill="white" text-anchor="middle">₮</text>
+        </svg>
+    </div>
+
+    <!-- Main Glassmorphic Container -->
+    <div class="fixed inset-0 flex flex-col items-center justify-center p-4">
+        <div class="relative w-full max-w-xl p-6 sm:p-10 rounded-[2.5rem] backdrop-blur-xl bg-white/[0.01] border border-white/5 shadow-[0_0_80px_rgba(0,0,0,0.8),inset_0_1px_0_rgba(255,255,255,0.05)] text-center flex flex-col items-center space-y-8 my-auto">
+            
+            <!-- Logo Section -->
+            <div class="relative flex flex-col items-center">
+                <!-- Glowing Backlight -->
+                <div class="absolute w-28 h-28 sm:w-36 sm:h-36 bg-gradient-to-r from-orange-500 to-red-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+                
+                <!-- Gold Spinning USDT Coin -->
+                <div class="relative w-20 h-20 sm:w-26 sm:h-26 bg-[#08080c] border-2 border-orange-500/30 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(249,115,22,0.2)]">
+                    <svg viewBox="0 0 100 100" class="w-12 h-12 sm:w-16 sm:h-16" style="animation: coin-spin 4s linear infinite;">
+                        <circle cx="50" cy="50" r="45" fill="#d4af37" />
+                        <circle cx="50" cy="50" r="38" fill="#26a17b" />
+                        <text x="50" y="62" font-family="sans-serif" font-weight="bold" font-size="36" fill="white" text-anchor="middle">₮</text>
+                    </svg>
+                </div>
+                
+                <!-- Title with neon glow -->
+                <h1 class="mt-4 text-5xl sm:text-6xl font-black italic tracking-tighter bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 bg-clip-text text-transparent" style="animation: pulse-glow 3s infinite;">
+                    MONERO SLOT
+                </h1>
+                <div class="h-[2px] w-28 bg-gradient-to-r from-transparent via-orange-500 to-transparent mt-2"></div>
+            </div>
+
+            <!-- Subtitle -->
+            <div class="space-y-2">
+                <h2 class="text-white font-black text-[11px] sm:text-xs tracking-[0.3em] uppercase opacity-95 flex items-center justify-center gap-1.5">
+                    ✨ THE PREMIUM WEB3 SLOTS EXPERIENCE ✨
+                </h2>
+                <p class="text-white/60 text-xs sm:text-sm max-w-sm mx-auto leading-relaxed">
+                    Gira los rodillos, diviértete a lo grande y gana premios directos a tu wallet en <span class="text-orange-400 font-bold">USDT (Red TON)</span>.
+                </p>
+            </div>
+
+            <!-- Legendary Symbols showcase (Vector icons look spectacular in Lovable) -->
+            <div class="w-full bg-black/40 border border-white/5 rounded-3xl p-4 space-y-3">
+                <h3 class="text-white/50 text-[10px] font-black tracking-wider uppercase text-center">
+                    SÍMBOLOS LEGENDARIOS DEL JUEGO
+                </h3>
+                
+                <div class="grid grid-cols-4 gap-2">
+                    <!-- Seven -->
+                    <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-2 flex flex-col items-center hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 mb-1">
+                            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#ff3333" stroke-width="2" />
+                            <path d="M30,30 L70,30 L45,75 L35,75 L55,40 L30,40 Z" fill="#ff3333" />
+                        </svg>
+                        <span class="text-[9px] font-black text-red-500">SEVEN</span>
+                        <span class="text-[8px] text-white/40 font-bold mt-0.5">X500 PAY</span>
+                    </div>
+                    
+                    <!-- BAR -->
+                    <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-2 flex flex-col items-center hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 mb-1">
+                            <circle cx="50" cy="50" r="45" fill="#0c0c12" stroke="#d4af37" stroke-width="2" />
+                            <rect x="25" y="35" width="50" height="10" rx="2" fill="#d4af37" />
+                            <rect x="25" y="50" width="50" height="10" rx="2" fill="#d4af37" />
+                            <rect x="25" y="65" width="50" height="10" rx="2" fill="#d4af37" />
+                        </svg>
+                        <span class="text-[9px] font-black text-yellow-500">BAR</span>
+                        <span class="text-[8px] text-white/40 font-bold mt-0.5">X250 PAY</span>
+                    </div>
+
+                    <!-- Star -->
+                    <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-2 flex flex-col items-center hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 mb-1">
+                            <polygon points="50,15 63,40 90,43 70,62 76,89 50,75 24,89 30,62 10,43 37,40" fill="#ffd700" />
+                        </svg>
+                        <span class="text-[9px] font-black text-amber-400">STAR</span>
+                        <span class="text-[8px] text-white/40 font-bold mt-0.5">X150 PAY</span>
+                    </div>
+
+                    <!-- Bell -->
+                    <div class="bg-white/[0.01] border border-white/5 rounded-2xl p-2 flex flex-col items-center hover:scale-105 transition-transform">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 mb-1">
+                            <path d="M50,20 C40,20 35,35 35,55 L65,55 C65,35 60,20 50,20 Z" fill="#ffd700" />
+                            <rect x="30" y="55" width="40" height="5" fill="#ffd700" />
+                            <circle cx="50" cy="65" r="5" fill="#ffd700" />
+                        </svg>
+                        <span class="text-[9px] font-black text-yellow-400">BELL</span>
+                        <span class="text-[8px] text-white/40 font-bold mt-0.5">X125 PAY</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-3 gap-2 sm:gap-3 w-full">
+                <!-- TON Connect -->
+                <div class="p-2.5 rounded-2xl bg-white/[0.01] border border-white/5 flex flex-col items-center justify-center space-y-1">
+                    <div class="w-7 h-7 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center mb-1">
+                        <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] sm:text-[10px] font-black text-white/80 tracking-wider uppercase">TON Connect</span>
+                    <span class="text-[7px] sm:text-[8px] text-white/40 font-medium">Billetera Directa</span>
+                </div>
+                
+                <!-- USDT Payouts -->
+                <div class="p-2.5 rounded-2xl bg-white/[0.01] border border-white/5 flex flex-col items-center justify-center space-y-1">
+                    <div class="w-7 h-7 rounded-full bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mb-1">
+                        <svg class="w-3.5 h-3.5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] sm:text-[10px] font-black text-white/80 tracking-wider uppercase">USDT Payouts</span>
+                    <span class="text-[7px] sm:text-[8px] text-white/40 font-medium">Retiros Rápidos</span>
+                </div>
+                
+                <!-- Fair Play -->
+                <div class="p-2.5 rounded-2xl bg-white/[0.01] border border-white/5 flex flex-col items-center justify-center space-y-1">
+                    <div class="w-7 h-7 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mb-1">
+                        <svg class="w-3.5 h-3.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <span class="text-[9px] sm:text-[10px] font-black text-white/80 tracking-wider uppercase">Fair Play</span>
+                    <span class="text-[7px] sm:text-[8px] text-white/40 font-medium">Azar Provable</span>
+                </div>
+            </div>
+
+            <!-- Shimmering Button -->
+            <button
+                id="btn-play"
+                class="group relative w-full max-w-sm h-14 sm:h-16 rounded-2xl font-black text-sm sm:text-base text-white tracking-[0.2em] uppercase overflow-hidden shadow-[0_15px_40px_rgba(249,115,22,0.25)] transition-all duration-300 transform hover:scale-[1.03] active:scale-[0.98]"
+            >
+                <!-- Background Gradient -->
+                <div class="absolute inset-0 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 transition-all duration-300 group-hover:opacity-90"></div>
+                
+                <!-- Border Inner Glow -->
+                <div class="absolute inset-[1px] bg-[#08080c] rounded-[15px] transition-all duration-300 group-hover:opacity-0"></div>
+                
+                <!-- Shimmer Effect -->
+                <div class="absolute inset-0 w-1/2 h-full bg-white/10 transform -skew-x-12 -translate-x-full group-hover:animate-shimmer" style="animation-duration: 1.5s;"></div>
+
+                <span class="relative z-10 flex items-center justify-center gap-2 text-white group-hover:text-[#08080c] transition-colors duration-300 font-extrabold">
+                    INICIAR JUEGO
+                    <svg class="w-4 h-4 sm:w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Alert / Toast Container (Synthesized) -->
+    <div id="toast" class="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-green-500/90 text-white font-black text-xs tracking-wider uppercase px-6 py-3 rounded-full shadow-2xl backdrop-blur-sm pointer-events-none opacity-0 transition-opacity duration-300 z-50">
+        🎮 CONECTANDO A TELEGRAM MINI APP...
+    </div>
+
+    <script>
+        // Synthesize a retro slot-machine click sound via Web Audio API
+        function playClickSound() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                if (ctx.state === "suspended") ctx.resume();
+                
+                // Click synth
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                
+                osc.type = "square";
+                osc.frequency.setValueAtTime(440, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.05);
+                
+                gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.06);
+                
+                osc.connect(gain).connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.06);
+            } catch(e) {
+                console.log("Audio not supported yet, waiting for interaction.");
+            }
+        }
+
+        // Button click interaction
+        document.getElementById('btn-play').addEventListener('click', () => {
+            // Play click sound
+            playClickSound();
+
+            // Mobile physical haptic feedback simulation
+            if (navigator.vibrate) {
+                navigator.vibrate([80, 40, 80]);
+            }
+
+            // Show interactive toast
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                alert("¡Bienvenido! Lovable cargará ahora el juego completo con TON Connect, USDT, Haptics y base de datos Supabase.");
+            }, 1200);
+        });
+    </script>
+</body>
+</html>
